@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="data">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Genero</th>
+      <th>Profesion</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.user}}</td>
+      <td>{{data.lastname}}</td>
+      <td>{{data.age}}</td>
+      <td>{{data.gender}}</td>
+      <td>{{data.profession}}</td>
+      <td>
+        <button nz-button nzType="primary">Ver mas</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

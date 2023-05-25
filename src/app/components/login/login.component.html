@@ -1,0 +1,25 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form [formGroup]="myForm">
+  <h3>Login</h3>
+
+  <label for="username">Usuario</label>
+  <input
+        type="text"
+        placeholder="Usuario"
+        id="username"
+        formControlName="user"
+  >
+
+  <label for="password">Password</label>
+  <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        formControlName="password"
+  >
+
+  <button (click)="save()">Ingresar</button>
+</form>
