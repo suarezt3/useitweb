@@ -53,13 +53,7 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
-form *{
-    font-family: 'Rubik', sans-serif;
-    color: #070707;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
+
 form h3{
     font-size: 32px;
     font-weight: 500;
@@ -83,18 +77,24 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    outline: none;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    color: #070707;
 }
 ::placeholder{
     color: #00000033;
 }
-button{
+ button{
     margin-top: 50px;
     width: 100%;
-    background-color: #3326eba2;
-    color: #080710;
-    padding: 15px 0;
+    height: 45px;
     font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
     cursor: pointer;
+}
+
+
+.error {
+  color: red;
+  font-family: 'Rubik', sans-serif;
 }

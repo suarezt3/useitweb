@@ -12,6 +12,9 @@
         id="username"
         formControlName="user"
   >
+  <div class="error" *ngIf="invalidField('user')" >
+    <span  *ngIf="myForm.controls?.['user']?.errors?.['required']" > Campo obligatorio </span>
+  </div>
 
   <label for="password">Password</label>
   <input
@@ -20,6 +23,11 @@
         id="password"
         formControlName="password"
   >
+  <div class="error" *ngIf="invalidField('password')" >
+    <span  *ngIf="myForm.controls?.['password']?.errors?.['required']" > Campo obligatorio </span>
+  </div>
 
-  <button (click)="save()">Ingresar</button>
+  <!-- <button (click)="save()">Ingresar</button> -->
+  <button (click)="save()" nz-button nzType="primary">Ingresar</button>
+  <span class="error">{{error}}</span>
 </form>
