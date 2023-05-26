@@ -1,1 +1,12 @@
-<p>user works!</p>
+<div class="card">
+  <div class="avatar" [ngSwitch]="user?.gender">
+    <img *ngSwitchCase="'Femenino'" src="../../../assets/icons/female.png" alt="imagen de mujer">
+    <img *ngSwitchCase="'Masculino'" src="../../../assets/icons/male.png" alt="imagen de hombre">
+  </div>
+  <h2 class="name">{{user?.user}} {{user?.lastname}}</h2>
+  <h3 class="text-card age" >{{user?.age}} Años</h3>
+  <h3 class="text-card gender">{{user?.gender}}</h3>
+  <h3 class="text-card profession">{{user?.profession}}</h3>
+  <button class="btn" nz-button nzType="primary" [routerLink]="['/table']">Volver</button>
+</div>
+

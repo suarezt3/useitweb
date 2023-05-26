@@ -20,13 +20,27 @@ constructor(private http: HttpClient) { }
  *
  * @returns Trae la tabla de los usuarios
  */
-getUser() {
+getUsers() {
   let headers = new HttpHeaders({
     'apikey'       : environment.supabaseKey,
     'Authorization': environment.authorization
   })
    return this.http.get<any>(`${this.url}`, {headers}).pipe()
 }
+
+
+/**
+ *
+ * @returns Enviamos como parametro el ID del usuario para consultar los detalles
+ */
+getUser(id: string) {
+  let headers = new HttpHeaders({
+    'apikey'       : environment.supabaseKey,
+    'Authorization': environment.authorization
+  })
+   return this.http.get<any>(`${this.url}?id=eq.${id}`, {headers}).pipe()
+}
+
 
 
 /**

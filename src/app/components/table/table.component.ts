@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userService.getUser().subscribe((user) => {
+    this.userService.getUsers().subscribe((user) => {
       console.log(user);
       this.data = user
 

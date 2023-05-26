@@ -1,0 +1,33 @@
+.card {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  background-color: yellowgreen;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 3px;
+  border-radius: 5px;
+background: #e0e0e0;
+box-shadow:  -20px -20px 60px #bebebe,
+             20px 20px 60px #ffffff;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.avatar {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  width: 70px;
+  height: 70px;
+}

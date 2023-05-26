@@ -5,6 +5,8 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzFormModule,
     NzTableModule,
     NzDividerModule,
-    NzButtonModule
+    NzButtonModule,
+    NzAvatarModule,
+    NzIconModule
   ]
 })
 export class NgzorroModule { }
