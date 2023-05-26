@@ -35,6 +35,9 @@ export class LoginComponent implements OnInit {
    * Metodo para realizar el login del usuario, si existe continua de lo contrario arrojara un error
    */
   save() {
+    if(this.myForm.invalid) {
+      this.myForm.markAllAsTouched();
+    }else{
     let user     = this.myForm.get('user')?.value
     let password = this.myForm.get('password')?.value
 
@@ -66,6 +69,7 @@ export class LoginComponent implements OnInit {
       }
 
     })
+  }
 
   }
 
