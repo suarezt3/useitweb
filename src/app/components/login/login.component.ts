@@ -10,9 +10,11 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit {
 
-
-  public error!: string
-  public myForm!: FormGroup;
+  public submitted: boolean = false;
+  public loader   : boolean = false;
+  public showError: boolean = false;
+  public error!   : string;
+  public myForm!  : FormGroup;
 
   constructor(private fb: FormBuilder, private userService: UsersService, private router: Router) {}
 
@@ -38,9 +40,28 @@ export class LoginComponent implements OnInit {
 
     this.userService.auth(user, password).subscribe((getuser) => {
       if(getuser[0]?.user === user && getuser[0]?.password === password) {
-        this.router.navigate(['/table'])
+        this.submitted = true;
+        this.myForm.reset()
+        this.loader = true;
+
+
+        /*establece un tiempo de espera de 2 segundos (2000 milisegundos) antes de ejecutar el código
+        dentro de la función. Este código establece la variable `loader` en `false` y navega
+        a la ruta `/table` utilizando el servicio `Router`. */
+        setTimeout(() => {
+          this.loader = false;
+          this.router.navigate(['/table'])
+        }, 2000); // 2 segundos
+
       }else {
-        this.error = 'Usuario o contraseña incorrectos'
+
+          /* Este código establece la variable booleana `showError` en `true`, que se utiliza para
+          mostrar un mensaje de error en el formulario de inicio de sesión. Luego, establece un
+          tiempo de espera de 3 segundos (3000 milisegundos) usando la función `setTimeout()` . */
+          this.showError = true;
+          setTimeout(() => {
+            this.showError = false;
+          }, 3000); // 3 segundos
         this.myForm.reset()
       }
 

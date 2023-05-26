@@ -15,10 +15,13 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
 
+    /* `this.userService.getUsers().subscribe((usuario) => { this.data = usuario })` está realizando
+    una solicitud HTTP GET al servidor para obtener la lista de usuarios. Una vez que se recibe la
+    respuesta, se llama al método `subscribe` con una función de devolución de llamada que asigna
+    los datos de respuesta a la propiedad `data` del componente. De esta forma, los datos obtenidos
+    se pueden usar en la plantilla para mostrar la lista de usuarios en una tabla. */
     this.userService.getUsers().subscribe((user) => {
-      console.log(user);
       this.data = user
-
     })
 
   }
